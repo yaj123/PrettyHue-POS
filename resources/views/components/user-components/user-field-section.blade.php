@@ -15,15 +15,15 @@
 
 @if (session()->has('message'))
 <div class="flex items-center p-4 mb-4 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:border-green-800 flash-message">
-    <div class="text-black text-sm"> {{ session('message') }}</div>
+    <div class="text-sm text-black"> {{ session('message') }}</div>
 </div>
- @endif	
+ @endif
 
 
     <div class="relative" style="height: 400px">
-        <div class="relative bg-white shadow dark:bg-gray-700 rounded-lg shadow dark:bg-gray-700" style="padding: 1%; margin: 5px;" >
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700" style="padding: 1%; margin: 5px;" >
             <h1> User Information </h1>
-        
+
             <form style="margin: 5px"  method="POST">
                 <div class="p-1 space-y-1">
                     <div class="grid grid-cols-3 gap-6">
@@ -33,30 +33,30 @@
                         </div>
                         <div class="col-span-9 sm:col-span-2">
                             <x-input-label for="name">Name</x-input-label>
-                            <x-user-components.text-input-field-user wire:model="userObject" type="text" name="name" id="name" placeholder="Name" required=""/> 
+                            <x-user-components.text-input-field-user wire:model="userObject.name" type="text" name="name" id="name" placeholder="Name" required=""/>
                         </div>
                         <div class="col-span-9 sm:col-span-1">
                             <x-input-label for="location">Location</x-input-label>
-                            <x-user-components.text-input-field-user wire:model="userObject" type="text" name="location" id="location" placeholder="Location" required=""/>
+                            <x-user-components.text-input-field-user wire:model="userObject.location" type="text" name="location" id="location" placeholder="Location" required=""/>
                         </div>
                         <div class="col-span-9 sm:col-span-2">
                             <x-input-label for="number">Number</x-input-label>
-                            <x-user-components.text-input-field-user wire:model="userObject" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" name="number" id="number" placeholder="Number" required="" maxlength="11"/>
+                            <x-user-components.text-input-field-user wire:model="userObject.number" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" name="number" id="number" placeholder="Number" required="" maxlength="11"/>
                         </div>
                         <div class="col-span-9 sm:col-span-1">
                             <x-input-label for="position">Position</x-input-label>
-                            <x-user-components.text-input-field-user wire:model="userObject" type="text" name="position" id="position" placeholder="Position" required=""/>
+                            <x-user-components.text-input-field-user wire:model="userObject.position" type="text" name="position" id="position" placeholder="Position" required=""/>
                         </div>
                         <div class="col-span-9 sm:col-span-2">
                             <x-input-label for="password">Password</x-input-label>
                             <x-user-components.text-input-field-user type="password" name="password" id="password" placeholder="••••••••" required=""/>
-                            
-                        </div>  
+
+                        </div>
                         <div class="col-span-9 sm:col-span-2">
                             <button wire:click="addUser" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add User</button>
                             <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-greed-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Update</button>
-                        </div>   
-                    </div> 
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

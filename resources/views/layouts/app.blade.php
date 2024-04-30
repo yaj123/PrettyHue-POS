@@ -12,7 +12,6 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @livewireStyles()
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
@@ -46,7 +45,7 @@
                           <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
                             <div class="px-4 py-3" role="none">
                               <p class="text-sm text-gray-900 dark:text-white" role="none">
-                                 {{ Auth::user()-> name}} 
+                                 {{ Auth::user()-> name}}
                               </p>
                             </div>
                             <ul class="py-1" role="none">
@@ -55,7 +54,7 @@
                               </li>
                               <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-    
+
                                 <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
@@ -98,7 +97,7 @@
                               <span class="flex-1 ms-3 whitespace-nowrap">Product Lists</span>
                           </a>
                         </li>
-                      
+
                         <li>
                           <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                               <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -138,16 +137,16 @@
                   </div>
                 </aside>
               <!--end of main banner-->
-              
+
                 <div>
                    <main>
-                    
+
                     {{ $slot }}
-                    @livewireScripts()
-                    
+
+
                    </main>
                 </div>
-          
+
         </div>
     </body>
 </html>
